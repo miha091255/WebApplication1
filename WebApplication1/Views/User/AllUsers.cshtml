@@ -1,0 +1,57 @@
+﻿<h2>@ViewBag.Message</h2>
+
+<h3><a href="AddUser">Добавить пользователя</a></h3>
+
+<h3>Администраторы</h3>
+<table>
+    <tr><td>Имя</td><td>Фамилия</td><td>Ник</td><td></td></tr>
+    @{if (ViewBag.Admins != null)
+        {
+            foreach (var a in ViewBag.Admins)
+            {
+                <tr>
+                    <td>@a.name</td>
+                    <td>@a.surname</td>
+                    <td>@a.login</td>
+                    <td><a href="DeleteAdmin/@a.id">Del</a></td>
+                </tr>
+            }
+        }
+    }
+</table>
+<br />
+<h3>Преподаватели</h3>
+<table>
+    <tr><td>Имя</td><td>Фамилия</td><td>Ник</td><td></td></tr>
+    @{if (ViewBag.Teachers != null)
+        {
+            foreach (var a in ViewBag.Teachers)
+            {
+                <tr>
+                    <td>@a.name</td>
+                    <td>@a.surname</td>
+                    <td>@a.login</td>
+                    <td><a href="DeleteTeacher/@a.id">Del</a></td>
+                </tr>
+            }
+        }
+    }
+</table>
+<br />
+<h3>Студенты</h3>
+<table>
+    <tr><td>Имя</td><td>Фамилия</td><td>Ник</td><td></td></tr>
+    @{if (ViewBag.Students != null)
+        {
+            foreach (var a in ViewBag.Students)
+            {
+                <tr>
+                    <td>@a.name</td>
+                    <td>@a.surname</td>
+                    <td>@a.login</td>
+                    <td><a href="DeleteStudent/@a.id">Del</a></td>
+                </tr>
+            }
+        }
+    }
+</table>

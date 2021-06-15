@@ -1,0 +1,10 @@
+﻿<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+@{ if (ViewBag.Article != null)
+    {
+<h3>@ViewBag.Article.name</h3>
+
+<p>@ViewBag.Article.content</p>
+        }
+    }

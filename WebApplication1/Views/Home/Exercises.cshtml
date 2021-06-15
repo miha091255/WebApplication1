@@ -1,0 +1,35 @@
+﻿<h2>@ViewBag.Message</h2>
+
+<h3>Лекционные материалы</h3>
+<h4><a href="AddTheory">Добавить лекцию</a></h4>
+<table>
+    <tr><td>Тема</td><td></td></tr>
+    @{if (ViewBag.Theories != null)
+        {
+            foreach (var t in ViewBag.Theories)
+            {
+                <tr>
+                    <td>@t.name</td>
+                    <td><a href="DeleteTheory/@t.id">Del</a></td>
+                </tr>
+            }
+        }
+    }
+</table>
+<br />
+<h3>Тестовые задания</h3>
+<h4><a href="AddTest">Добавить тест</a></h4>
+<table>
+    <tr><td>Тема</td><td></td></tr>
+    @{if (ViewBag.Tests != null)
+        {
+            foreach (var t in ViewBag.Tests)
+            {
+                <tr>
+                    <td>@t.name</td>
+                    <td><a href="DeleteTest/@t.id">Del</a></td>
+                </tr>
+            }
+        }
+    }
+</table>

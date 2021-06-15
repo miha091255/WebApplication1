@@ -1,0 +1,27 @@
+﻿<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+@model WebApplication1.Models.Quest
+
+<form class="test" method="GET">
+
+    @foreach (var q in ViewBag.Quests)
+    {
+    <div class="form-group">
+        <div class="control-label col-md-2">@q.quest</div>
+        <br /><br />
+        @Html.RadioButton("@q.id", "answer1")
+        <span>@q.answer1</span><br />
+        @Html.RadioButton("@q.id", "answer2")
+        <span>@q.answer2</span> <br />
+        @Html.RadioButton("@q.id", "answer3")
+        <span>@q.answer3</span><br />
+        @Html.RadioButton("@q.id", "answer4")
+        <span>@q.answer4</span><br />
+    </div>
+
+    }
+
+    <input type="submit" value="Завершить тест" class="btn btn-default"/>
+
+</form>
+

@@ -1,0 +1,55 @@
+﻿<h2>Регистрация нового пользователя</h2>
+@model WebApplication1.Models.UserModel
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    @Html.ValidationSummary(true)
+    <div class="form-group">
+        @Html.LabelFor(model => model.name, "Имя: ", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.surname, "Фамилия: ", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.surname)
+            @Html.ValidationMessageFor(model => model.surname)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.login, "Ник: ", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.login)
+            @Html.ValidationMessageFor(model => model.login)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.pass, "Пароль", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.pass)
+            @Html.ValidationMessageFor(model => model.pass)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class = "control-label col-md-10">Статус пользователя
+        @Html.RadioButton("role", "Admin")
+        <span>Администратор</span> <br />
+        @Html.RadioButton("role", "Teacher")
+        <span>Преподаватель</span> <br />
+        @Html.RadioButton("role", "Student", true)
+        <span>Студент</span>
+        </div>
+    </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Добавить" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
